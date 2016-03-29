@@ -1,0 +1,61 @@
+DataProduct
+========================================================
+author: Mukesh Sah
+date: March 26 2016
+
+========================================================
+## Disease Prediction Using R
+
+1. How I have created dataset ?
+2. Cleaning and Rensing dataset ?
+3. Data Mining
+4. ML Models
+5. Results
+
+========================================================
+
+## Dataset
+
+  The data set was manually created.
+  Intervied 50 different people.
+  ```{r, echo=2}
+    load("D:/DataProductionAssignement/Assignment/data/disease.RData")
+    head(d1)
+  ```
+
+========================================================
+
+## Data Cleaning
+  
+  Empty values were removed.
+  
+  Disease columns was casted as factor.
+```{r}
+    colnames(d1)
+```
+
+========================================================
+## Ml Algorithms
+
+  Using tm library stop word was removed.
+  
+  Frequency table was built based on the occurance of words.
+  
+  Also TF-ITF was calculated.
+
+```{r}
+    library(tm)
+```
+
+
+========================================================
+## Visualization
+Using diamonds dataset for visualization 
+
+as my data points are not good.
+```{r, echo=5}
+library(ggplot2)
+data(diamonds)
+diamonds<-diamonds[sample(1:nrow(diamonds),2000),]
+ggplot(diamonds, aes(carat, price))+geom_point(color="firebrick")
+
